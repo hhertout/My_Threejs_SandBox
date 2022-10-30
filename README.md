@@ -1,4 +1,4 @@
 # Three-js-starter
 
 
-This is my Starter for a Three.js Project. 
+This is my Starter code for a Three.js Project. 
