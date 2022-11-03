@@ -1,8 +1,8 @@
-# Three Js SandBox
+# Three Js SandBox 🎆
 
 Sandbox to learn and practise Three JS.
 
-## Setup
+## Setup ⚒️
 
 Three JS
 Webpack
@@ -11,11 +11,11 @@ GreenSock
 dat.GUI
 Sass
 
-### Installation
+### Installation 🖥️
 
-npm install
+npm install & you good to go !
 
-### Link to different tutorials
+### Link to different tutorials 🌎
 https://youtu.be/pUgWfqWZWmM - Sphere
 https://youtu.be/U29j5NiSMVQ - SmoothScroll & Raycasting
 https://youtu.be/2AQLMZwQpDo - Terrain
