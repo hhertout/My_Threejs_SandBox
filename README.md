@@ -1,4 +1,23 @@
-# Three-js-starter
+# Three Js SandBox
 
+Sandbox to learn and practise Three JS.
 
-This is my Starter code for a Three.js Project. 
+##Setup
+
+Three JS
+Webpack
+Babel
+GreenSock
+dat.GUI
+Sass
+
+###Installation
+
+npm install
+
+###Link to different tutorials
+https://youtu.be/pUgWfqWZWmM - Sphere
+https://youtu.be/U29j5NiSMVQ - SmoothScroll & Raycasting
+https://youtu.be/2AQLMZwQpDo - Terrain
+https://youtu.be/dLYMzNmILQA - particules
+https://youtu.be/9UukUyXqBCg - w/ Blender
