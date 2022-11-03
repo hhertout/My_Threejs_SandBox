@@ -1,0 +1,125 @@
+.menu-button {
+    z-index: 3;
+    position: fixed;
+    top: 2vh;
+    left: 2vw;
+    color: $font-color;
+
+    font-size: $font-size-menu;
+    font-weight: 900;
+    font-family: $font-Elsie;
+
+    padding: $padding-more;
+
+    cursor: pointer;
+
+    &:hover{
+        transform: translateX(-10%);
+        transform-origin: right;
+        transition: 0.4s ease;
+    }
+}
+
+
+.menu-display {
+    width: 80%;
+    height: 100%;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    z-index: 4;
+    
+    padding: 10vw;
+    
+    background: url(../images/always-grey.png) $bg-color;
+    color: $font-color;
+    
+    transform: translateY(-100%);
+    
+    letter-spacing: 5px;
+    
+    .close-button{
+        position: absolute;
+        width: fit-content;
+        top: 4vh;
+        left: 4vw;
+        color: $font-color;
+        
+        font-family: $font-Elsie;
+        font-size: $font-size-menu;
+        font-weight: 900;
+    
+    
+        cursor: pointer;
+    
+        &:hover{
+            transform: translateX(-10%);
+            transform-origin: right;
+            transition: 0.4s ease;
+        }
+    }
+
+    .menu-content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .menu-description {
+        width: 50%;
+        height: 100%;
+        text-align: right;
+        
+        a {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-block: 8px;
+        }
+        svg{
+            margin-inline: 8px;
+            width: 50px;
+            height: 50px;
+            fill: $font-color;
+        }
+        .menu-powered {
+            margin-top: 10vh;
+            align-self: flex-end;
+        }
+    }
+
+    .menu-title{
+        font-family: $font-Elsie;
+        font-weight: 900;
+        font-size: 3.5rem;
+        width: 100vw;
+        height: 20%;
+    }
+
+    .nav-links {
+        font-size: 2rem;
+        width: 50%;
+        min-width: fit-content;
+        min-height: fit-content;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        font-weight: 800;
+        font-style: italic;
+        
+
+        li {
+            padding-block: 1vw;
+
+            &:hover {
+                text-decoration: underline;
+                transform: translateX(2%);
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+}
