@@ -15,6 +15,10 @@ Sandbox to learn and practise Three JS.
 
 npm install & you good to go !
 
+### Sass Command
+
+sass --watch public/assets/stylesheets
+
 ### 🌎 Link to different tutorials 
 - https://youtu.be/pUgWfqWZWmM - Sphere
 - https://youtu.be/U29j5NiSMVQ - SmoothScroll & Raycasting
