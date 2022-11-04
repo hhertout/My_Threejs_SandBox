@@ -1,7 +1,7 @@
 .menu-button {
     z-index: 3;
     position: fixed;
-    top: 2vh;
+    top: 1vh;
     left: 2vw;
     color: $font-color;
 
@@ -14,7 +14,7 @@
     cursor: pointer;
 
     &:hover{
-        transform: translateX(-10%);
+        transform: translateX(10%);
         transform-origin: right;
         transition: 0.4s ease;
     }
@@ -43,19 +43,21 @@
     .close-button{
         position: absolute;
         width: fit-content;
-        top: 4vh;
-        left: 4vw;
+        top: 1vh;
+        left: 1vw;
         color: $font-color;
         
         font-family: $font-Elsie;
         font-size: $font-size-menu;
         font-weight: 900;
+
+        padding: $padding-more;
     
     
         cursor: pointer;
     
         &:hover{
-            transform: translateX(-10%);
+            transform: translateX(10%);
             transform-origin: right;
             transition: 0.4s ease;
         }
