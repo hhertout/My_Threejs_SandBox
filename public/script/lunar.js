@@ -25,6 +25,8 @@ material.normalMap = normalTexture
 
 // Mesh
 const sphere = new THREE.Mesh(geometry,material)
+sphere.position.x = 20
+sphere.position.y = -10
 scene.add(sphere)
 
 // Lights
@@ -69,8 +71,8 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = -6
-camera.position.y = 10
+camera.position.x = 0
+camera.position.y = 0
 camera.position.z = 60
 scene.add(camera)
 
@@ -93,8 +95,9 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 
 
-window.addEventListener('scroll', e => {
-    sphere.position.y = window.scrollY * 0.001
+window.addEventListener('scroll', (e) => {
+    camera.position.x = window.scrollY * 0.03
+    camera.position.y = -window.scrollY * 0.01
 })
 
 
