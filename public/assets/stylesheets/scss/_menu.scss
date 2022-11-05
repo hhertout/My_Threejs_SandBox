@@ -95,7 +95,7 @@
     .menu-title{
         font-family: $font-Elsie;
         font-weight: 900;
-        font-size: 3.5rem;
+        font-size: 4rem;
         width: 100vw;
         height: 20%;
     }
@@ -111,15 +111,14 @@
         justify-content: center;
         
         font-weight: 800;
-        font-style: italic;
         
 
         li {
             padding-block: 1vw;
+            transition: .4s ease-in-out;
 
             &:hover {
-                text-decoration: underline;
-                transform: translateX(2%);
+                transform: translateX(1%) skewX(-5deg);
                 transition: .4s ease-in-out;
             }
         }

@@ -17,14 +17,13 @@ const gui = new dat.GUI();
 const scene = new THREE.Scene()
 
 // Objects
-const sphereGeometry = new THREE.SphereGeometry(0.5, 64, 64);
+const sphereGeometry = new THREE.SphereGeometry(0.5, 30, 30);
 
 // Materials
-
 const material = new THREE.MeshStandardMaterial()
 material.metalness = 0.7
 material.roughness = 0.2
-material.color = new THREE.Color(0xff0000)
+material.color = new THREE.Color(0x660066)
 material.normalMap = normalTexture
 
 // Mesh
@@ -32,20 +31,19 @@ const sphere = new THREE.Mesh(sphereGeometry,material)
 scene.add(sphere)
 
 // Lights
-
-const pointLight = new THREE.PointLight(0x00ff00)
+const pointLight = new THREE.PointLight(0xFF0000)
 pointLight.position.x = 1.3
 pointLight.position.y = 2.8
 pointLight.position.z = 0.1
-pointLight.intensity = 2.3
+pointLight.intensity = 1.6
 scene.add(pointLight)
 
 const pointLight2 = new THREE.PointLight(0x1b5cd)
 pointLight2.position.set(0.9,-0.9,0.15)
-pointLight2.intensity = 4.8
+pointLight2.intensity = 1.8
 scene.add(pointLight2)
 
-const pointLight3 = new THREE.PointLight(0x0000ff)
+const pointLight3 = new THREE.PointLight(0xcefa01)
 pointLight3.position.set(-1.5,2.3,1)
 pointLight3.intensity = 1.6
 scene.add(pointLight3)
@@ -55,6 +53,7 @@ pointLight4.position.set(-3, -4, 6)
 pointLight4.intensity = 1.6
 scene.add(pointLight4)
 
+//GUI HELPER POINT LIGHT POSITION
 const light2 = gui.addFolder('Light 2')
 light2.add(pointLight2.position, 'x').min(-5).max(3)
 light2.add(pointLight2.position, 'y').min(-5).max(3)
@@ -82,9 +81,6 @@ light4.addColor( light4Color , 'color')
     })
 
 
-/**
- * Sizes
- */
 const sizes = {
     width: window.innerWidth,
     height: window.innerHeight
@@ -132,16 +128,41 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 /**
  * Animate
  */
+let mouseX = 0
+let mouseY = 0
+
+let targetX = 0
+let targetY = 0
+
+const windowHalfX = window.innerWidth / 2;
+const windowHalfY = window.innerHeight / 2;
+
+document.addEventListener('mousemove', (e) => {
+ 
+    mouseX = (e.clientX - windowHalfX)
+    mouseY = (e.clientY - windowHalfY)
+})
+
+window.addEventListener('scroll', (e)=> {
+    sphere.position.y = window.scrollY * 0.001
+});
+
 
 const clock = new THREE.Clock()
 
 const tick = () =>
 {
+    targetX = mouseX * .001
+    targetY = mouseY * .001
 
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
     sphere.rotation.y = .2 * elapsedTime
+
+    sphere.rotation.x += .5 * (targetY - sphere.rotation.x)
+    sphere.rotation.y += .2 * (targetX - sphere.rotation.y)
+    sphere.position.z += .9 * (targetY - sphere.rotation.x)
 
     // Update Orbital Controls
     // controls.update()

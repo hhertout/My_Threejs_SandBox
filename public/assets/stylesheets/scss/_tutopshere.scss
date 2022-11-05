@@ -1,3 +1,27 @@
 .tuto-sphere {
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    background-color: rgb(69, 67, 67);
+    mix-blend-mode: color-burn;
+}
+
+.container {
+    
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    z-index: 2;
+
+    h1 {
+        font-size: 6rem;
+        text-transform: uppercase;
+        color: $font-color;
+    }
+}
+
+section{
+    height: 100vh;
     background-color: rgb(69, 67, 67);
 }
