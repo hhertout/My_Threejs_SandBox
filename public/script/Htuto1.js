@@ -17,7 +17,7 @@ const gui = new dat.GUI();
 const scene = new THREE.Scene()
 
 // Objects
-const sphereGeometry = new THREE.SphereGeometry(0.3, 64, 64);
+const sphereGeometry = new THREE.SphereGeometry(0.5, 64, 64);
 
 // Materials
 
