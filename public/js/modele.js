@@ -1,5 +1,5 @@
-import * as THREE from "../../node_modules/three/build/three.module.js";
-import { gsap } from "../../node_modules/gsap/all.js";
+import * as THREE from "/../../node_modules/three/build/three.module.js";
+import { gsap } from "/../../node_modules/gsap/all.js";
 
 
 // Canvas
