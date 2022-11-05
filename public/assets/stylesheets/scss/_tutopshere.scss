@@ -18,10 +18,28 @@
         font-size: 6rem;
         text-transform: uppercase;
         color: $font-color;
+        text-align: center;
     }
 }
 
 .tuto-sphere-section {
-    height: 100vh;
+    height: fit-content;
+    min-height: 100vh;
     background-color: rgb(69, 67, 67);
+    font-size: calc(1vw + 1.5rem);
+    color: $font-color;
+    padding-inline: calc(6vw + 4rem);
+    padding-top: calc(2vh + 5rem);
+    @extend %flex-center;
+
+    h2 {
+        margin-block-end: 1rem;
+    }
+    h3 {
+        margin-block-start: 3rem;
+        margin-block-end: 1rem;
+    }
+    li{
+        padding-block: 1rem;
+    }
 }
