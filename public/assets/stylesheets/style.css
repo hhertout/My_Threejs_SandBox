@@ -1,10 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Montserrat:wght@300;400;700;800;900&family=Roboto:wght@400;500;700;900&display=swap");
-.tuto-sphere-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -153,7 +147,6 @@ h1, h2, h3, h4, h5, h6 {
   height: 100vh;
   display: grid;
   place-items: center;
-  z-index: 2;
 }
 .tuto-sphere-container h1 {
   font-size: 6rem;
@@ -170,6 +163,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #f1f1f1;
   padding-inline: calc(6vw + 4rem);
   padding-top: calc(2vh + 5rem);
+  display: grid;
 }
 .tuto-sphere-section h2 {
   margin-block-end: 1rem;
