@@ -3,11 +3,11 @@
     top: 0;
     left: 0;
     outline: none;
-    background-color: rgb(69, 67, 67);
+    background-color: rgb(111, 88, 88);
     mix-blend-mode: color-burn;
 }
 
-.container {
+.tuto-sphere-container {
     
     height: 100vh;
     display: grid;
@@ -21,7 +21,7 @@
     }
 }
 
-section{
+.tuto-sphere-section {
     height: 100vh;
     background-color: rgb(69, 67, 67);
 }
