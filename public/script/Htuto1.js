@@ -1,7 +1,6 @@
 import * as THREE from "../../node_modules/three/build/three.module.js";
 import { gsap } from "../../node_modules/gsap/all.js";
 
-
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
 //GUI init
