@@ -1,4 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Montserrat:wght@300;400;700;800;900&family=Roboto:wght@400;500;700;900&display=swap");
+.tuto-sphere-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -31,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 3;
   position: fixed;
   top: 1vh;
-  left: 2vw;
+  left: 1vw;
   color: #f1f1f1;
   font-size: calc(1vw + 1vh);
   font-weight: 900;
@@ -153,11 +159,27 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 6rem;
   text-transform: uppercase;
   color: #f1f1f1;
+  text-align: center;
 }
 
 .tuto-sphere-section {
-  height: 100vh;
+  height: fit-content;
+  min-height: 100vh;
   background-color: rgb(69, 67, 67);
+  font-size: calc(1vw + 1.5rem);
+  color: #f1f1f1;
+  padding-inline: calc(6vw + 4rem);
+  padding-top: calc(2vh + 5rem);
+}
+.tuto-sphere-section h2 {
+  margin-block-end: 1rem;
+}
+.tuto-sphere-section h3 {
+  margin-block-start: 3rem;
+  margin-block-end: 1rem;
+}
+.tuto-sphere-section li {
+  padding-block: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
