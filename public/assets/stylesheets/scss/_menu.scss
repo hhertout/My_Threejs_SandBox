@@ -22,16 +22,15 @@
 
 
 .menu-display {
-    width: 80%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     
     position: fixed;
     top: 0;
     left: 0;
     
     z-index: 4;
-    
-    padding: 10vw;
+
     
     background: url(../images/always-grey.png) $bg-color;
     color: $font-color;
@@ -71,7 +70,8 @@
     
     .menu-description {
         width: 50%;
-        height: 100%;
+        height: 70%;
+        padding-inline-end: 10%;
         text-align: right;
         
         a {
@@ -95,16 +95,17 @@
     .menu-title{
         font-family: $font-Elsie;
         font-weight: 900;
-        font-size: 4rem;
-        width: 100vw;
-        height: 20%;
+        font-size: 4vw;
+        width: 100%;
+        height: 30%;
+
+        @extend %flex-center;
     }
 
     .nav-links {
         font-size: 2rem;
         width: 50%;
-        min-width: fit-content;
-        min-height: fit-content;
+        height: 70%;
 
         display: flex;
         flex-direction: column;
@@ -112,6 +113,7 @@
         
         font-weight: 800;
         
+        padding-inline-start: 10%;
 
         li {
             padding-block: 1vw;

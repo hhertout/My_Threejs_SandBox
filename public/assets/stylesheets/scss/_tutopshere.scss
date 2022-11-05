@@ -4,11 +4,10 @@
     left: 0;
     outline: none;
     background-color: rgb(111, 88, 88);
-    mix-blend-mode: color-burn;
+    mix-blend-mode: difference;
 }
 
 .tuto-sphere-container {
-    
     height: 100vh;
     display: grid;
     place-items: center;
@@ -22,23 +21,30 @@
 }
 
 .tuto-sphere-section {
+    width: 100%;
     height: fit-content;
     min-height: 100vh;
     background-color: rgb(69, 67, 67);
     font-size: calc(1vw + 1.5rem);
     color: $font-color;
     padding-inline: calc(6vw + 4rem);
-    padding-top: calc(2vh + 5rem);
     display: grid;
 
-    h2 {
-        margin-block-end: 1rem;
+    .content{
+        padding-block: calc(2vh + 5rem);
+        @extend %flex-center;
+        flex-direction: column;
+        
+        h2 {
+            margin-block-end: 1rem;
+        }
+        h3 {
+            margin-block-start: 3rem;
+            margin-block-end: 1rem;
+        }
+        li{
+            padding-block: 1rem;
+        }
     }
-    h3 {
-        margin-block-start: 3rem;
-        margin-block-end: 1rem;
-    }
-    li{
-        padding-block: 1rem;
-    }
+
 }

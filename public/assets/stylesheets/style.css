@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Elsie:wght@400;900&family=Montserrat:wght@300;400;700;800;900&family=Roboto:wght@400;500;700;900&display=swap");
+.tuto-sphere-section .content, .menu-display .menu-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -46,13 +53,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .menu-display {
-  width: 80%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 4;
-  padding: 10vw;
   background: url(../images/always-grey.png) rgb(6, 32, 51);
   color: #f1f1f1;
   transform: translateY(-100%);
@@ -82,7 +88,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 .menu-display .menu-description {
   width: 50%;
-  height: 100%;
+  height: 70%;
+  padding-inline-end: 10%;
   text-align: right;
 }
 .menu-display .menu-description a {
@@ -104,19 +111,19 @@ h1, h2, h3, h4, h5, h6 {
 .menu-display .menu-title {
   font-family: "Elsie", cursive;
   font-weight: 900;
-  font-size: 4rem;
-  width: 100vw;
-  height: 20%;
+  font-size: 4vw;
+  width: 100%;
+  height: 30%;
 }
 .menu-display .nav-links {
   font-size: 2rem;
   width: 50%;
-  min-width: fit-content;
-  min-height: fit-content;
+  height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-weight: 800;
+  padding-inline-start: 10%;
 }
 .menu-display .nav-links li {
   padding-block: 1vw;
@@ -140,7 +147,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   outline: none;
   background-color: rgb(111, 88, 88);
-  mix-blend-mode: color-burn;
+  mix-blend-mode: difference;
 }
 
 .tuto-sphere-container {
@@ -156,23 +163,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tuto-sphere-section {
+  width: 100%;
   height: fit-content;
   min-height: 100vh;
   background-color: rgb(69, 67, 67);
   font-size: calc(1vw + 1.5rem);
   color: #f1f1f1;
   padding-inline: calc(6vw + 4rem);
-  padding-top: calc(2vh + 5rem);
   display: grid;
 }
-.tuto-sphere-section h2 {
+.tuto-sphere-section .content {
+  padding-block: calc(2vh + 5rem);
+  flex-direction: column;
+}
+.tuto-sphere-section .content h2 {
   margin-block-end: 1rem;
 }
-.tuto-sphere-section h3 {
+.tuto-sphere-section .content h3 {
   margin-block-start: 3rem;
   margin-block-end: 1rem;
 }
-.tuto-sphere-section li {
+.tuto-sphere-section .content li {
   padding-block: 1rem;
 }
 
