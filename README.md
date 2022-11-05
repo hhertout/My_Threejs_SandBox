@@ -5,8 +5,8 @@ Sandbox to learn and practise Three JS.
 ## ⚒️ Setup 
 
 - Three JS
-- Webpack
-- Babel
+- Webpack (not config)
+- Babel (not config)
 - GreenSock
 - dat.GUI
 - Sass
