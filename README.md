@@ -25,3 +25,4 @@ sass --watch public/assets/stylesheets
 - https://youtu.be/2AQLMZwQpDo - Terrain
 - https://youtu.be/dLYMzNmILQA - particules
 - https://youtu.be/9UukUyXqBCg - w/ Blender
+- https://youtu.be/qLh12Aav3hs - Awesome particules 😍
