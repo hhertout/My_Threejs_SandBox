@@ -27,13 +27,14 @@ material.normalMap = normalTexture
 const sphere = new THREE.Mesh(geometry,material)
 sphere.position.x = 20
 sphere.position.y = -10
+sphere.rotation.y = -40
 scene.add(sphere)
 
 // Lights
 
 const pointLight = new THREE.PointLight(0xffffff)
 pointLight.position.set(-955, -683, 292)
-pointLight.intensity = 0.85
+pointLight.intensity = 0.9
 scene.add(pointLight)
 
 const light = gui.addFolder('SunLight')
@@ -85,7 +86,8 @@ scene.add(camera)
  */
 const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
-    alpha: true
+    alpha: true,
+    antialias: true
 })
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
@@ -96,8 +98,15 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 
 window.addEventListener('scroll', (e) => {
-    camera.position.x = window.scrollY * 0.03
-    camera.position.y = -window.scrollY * 0.01
+/*     camera.position.x = window.scrollY * 0.03
+    camera.position.y = -window.scrollY * 0.01 */
+
+    gsap.to(camera.position, {
+        x: window.scrollY * 0.03,
+        y: -window.scrollY * 0.01,
+        ease: "power3.out",
+    })
+
 })
 
 
