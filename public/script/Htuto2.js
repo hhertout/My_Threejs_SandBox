@@ -3,7 +3,7 @@ import { gsap } from "/../../node_modules/gsap/all.js";
 
 
 // Canvas
-const canvas = document.querySelector('canvas.webgl')
+const canvas = document.querySelector('canvas.tuto-2')
 //GUI init
 const gui = new dat.GUI();
 
