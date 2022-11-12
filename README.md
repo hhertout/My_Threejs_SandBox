@@ -29,3 +29,4 @@ sass --watch public/assets/stylesheets
 - https://youtu.be/YK1Sw_hnm58 - Tuto
 - https://youtu.be/vM8M4QloVL0 - Earth with atmo
 - https://www.freecodecamp.org/news/three-js-tutorial/ - Car
+- https://youtu.be/o_bEveIFfoM - Galaxy 😍
