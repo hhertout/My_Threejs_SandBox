@@ -6,11 +6,15 @@ let menuOpen = document.querySelector('.menu-button');
 menuClose.addEventListener('click', () => {
     gsap.to('.menu-display', {
         yPercent: "-=100",
+        ease: "power4.inOut",
+        duration: 1,
     })
 })
 menuOpen.addEventListener('click', () => {
     gsap.to('.menu-display', {
         yPercent: "+=100",
+        ease: "power4.inOut",
+        duration: 1.7,
     })
 })
 
