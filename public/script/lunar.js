@@ -119,7 +119,7 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    sphere.rotation.y = .05 * elapsedTime
+    sphere.rotation.y = .07 * elapsedTime
 
     // Update Orbital Controls
     // controls.update()

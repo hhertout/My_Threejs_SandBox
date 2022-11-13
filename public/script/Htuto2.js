@@ -1,35 +1,57 @@
 import * as THREE from "/../../node_modules/three/build/three.module.js";
 import { gsap } from "/../../node_modules/gsap/all.js";
 
+//Texture Loader
+
 
 // Canvas
 const canvas = document.querySelector('canvas.tuto-2')
 //GUI init
 const gui = new dat.GUI();
 
-// Scene
+
+//Creating images
+const textureLoader = new THREE.TextureLoader()
+const geometry = new THREE.PlaneGeometry(1, 1.4)
 const scene = new THREE.Scene()
 
-// Objects
-const geometry = new THREE.TorusGeometry( .7, .2, 16, 100 );
+for(let i = 0 ; i< 4 ; i++){
+    const material = new THREE.MeshBasicMaterial({
+        map: textureLoader.load(`assets/images/building${i}.jpg`)
+    })
 
-// Materials
+    const img = new THREE.Mesh(geometry, material)
 
-const material = new THREE.MeshBasicMaterial()
-material.color = new THREE.Color(0xff0000)
+    scene.add(img)
 
-// Mesh
-const sphere = new THREE.Mesh(geometry,material)
-scene.add(sphere)
+    img.position.set(Math.random() , i * -1.9 - 0.6)
+}
 
-// Lights
 
-const pointLight = new THREE.PointLight(0xffffff, 0.1)
-pointLight.position.x = 2
-pointLight.position.y = 3
-pointLight.position.z = 4
-scene.add(pointLight)
+//Put images in array
+let objects = []
 
+scene.traverse(object => {
+    if (object.isMesh) {
+        objects.push(object)
+    }
+})
+
+//set the scroll to the posY
+let y = 0
+let position = 0
+window.addEventListener('wheel', (e) => {
+    y = e.deltaY * 0.0009
+})
+
+const mouse = new THREE.Vector2()
+
+window.addEventListener('mousemove', e => {
+
+    mouse.x = e.clientX / sizes.width * 2 - 1
+    mouse.y = - (e.clientY / sizes.height) * 2 + 1
+
+})
 /**
  * Sizes
  */
@@ -50,48 +72,75 @@ window.addEventListener('resize', () =>
 
     // Update renderer
     renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(window.devicePixelRatio)
 })
 
-/**
- * Camera
- */
+
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
-camera.position.y = 0
-camera.position.z = 2
+camera.position.z = 1.8
 scene.add(camera)
 
-// Controls
-// const controls = new OrbitControls(camera, canvas)
-// controls.enableDamping = true
-
-/**
- * Renderer
- */
+//renderer
 const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
+    canvas: canvas,
+    antialias: true,
 })
 renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+renderer.setPixelRatio(window.devicePixelRatio)
 
-/**
- * Animate
- */
+renderer.setClearColor( 0x222222, 1);
 
-const clock = new THREE.Clock()
+const raycaster = new THREE.Raycaster()
 
 const tick = () =>
 {
+    position += y
+    y *= 0.5
 
-    const elapsedTime = clock.getElapsedTime()
+    raycaster.setFromCamera(mouse, camera)
+    const intersects = raycaster.intersectObjects(objects)
 
-    // Update objects
-    sphere.rotation.y = .5 * elapsedTime
+    for(const intersect of intersects){
+        gsap.to(intersect.object.scale, {
+            x: 1.3,
+            y: 1.4,
+        })
+        gsap.to(intersect.object.rotation, {
+            y: -0.4,
+        })
+        gsap.to(intersect.object.position, {
+            z: -0.5,
+        })
+        gsap.to(intersect.object.position, {
 
-    // Update Orbital Controls
-    // controls.update()
+        })
+    }
+
+    for(const object of objects){
+        if (!intersects.find(intersect => intersect.object === object)){
+            gsap.to(object.scale, {
+                x: 1,
+                y: 1,
+            })
+            gsap.to(object.rotation, {
+                y: 0
+            })
+            gsap.to(object.position, {
+                z: 0,
+            })
+        }
+    }
+    
+    if (position > 6.8) {
+        position = 6.8
+    }
+    if(position < 0) {
+        position = 0
+    }
+    
+    camera.position.y = -position
 
     // Render
     renderer.render(scene, camera)

@@ -13,7 +13,7 @@ menuClose.addEventListener('click', () => {
 menuOpen.addEventListener('click', () => {
     gsap.to('.menu-display', {
         yPercent: "+=100",
-        ease: "power4.inOut",
+        ease: "power4.out",
         duration: 1.7,
     })
 })
