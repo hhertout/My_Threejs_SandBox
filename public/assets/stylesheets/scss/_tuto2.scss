@@ -1,0 +1,23 @@
+.body-tuto2 {
+    overscroll-behavior-y: none;
+    overflow: hidden;
+}
+.tuto-2 {
+    height: 100vh;
+}
+.tuto2-content {
+    position: absolute;
+    display: grid;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    h2{
+        font-size: 4rem;
+        margin-left: 10vw;
+        color: $light;
+        font-family: $font-Elsie;
+        font-weight: lighter;
+    }
+}
